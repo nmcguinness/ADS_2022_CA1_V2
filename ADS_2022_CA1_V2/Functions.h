@@ -9,12 +9,12 @@ void interleaveArrays(int* pA1, int
 	int j = 0;
 	for (int i = 0; i < lengthA1 + lengthA2; i++)
 	{
-		if (i % 2 == 0)
+		if (i % 2 == 0) //even
 		{
 			pArrOut[i] = pA1[j];
 			j++;
 		}
-		else
+		else  //odd
 		{
 			pArrOut[i] = pA2[j];
 			j++;
