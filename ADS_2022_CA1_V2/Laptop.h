@@ -29,4 +29,33 @@ public:
 		out << laptop.make << ", " << laptop.price;
 		return out;
 	}
+
+	bool operator<=(const Laptop& rhs)
+	{
+		/*	return (*this).price <= (*this).getHDSize()
+				&& (*this).price <= (*this).getPrice(); */
+		return this->hdSize <= rhs.getHDSize()
+			&& this->price <= rhs.getPrice();
+	}
+
+#pragma region EXTRA STUFF BECAUSE IM A NERD
+	bool operator==(const Laptop& rhs) {
+		//rhs.price = -9999;
+		return this->hdSize == rhs.getHDSize()
+			&& this->price == rhs.getPrice();
+	}
+
+	//MORE elegant than in lines below
+	//bool operator!=(const Laptop& rhs) {
+	//	//de-reference (go to the laptop stored by this)
+	//	//compare that laptop with rhs
+	//	//invert/flip the result of that comparison
+	//	return !(*this == rhs);
+	//}
+
+	bool operator!=(const Laptop& rhs) {
+		return this->hdSize != rhs.getHDSize()
+			|| this->price != rhs.getPrice();
+	}
+#pragma endregion
 };
