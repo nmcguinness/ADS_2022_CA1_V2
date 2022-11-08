@@ -5,7 +5,7 @@
 #include "Functions.h"
 using namespace std;
 
-int main()
+void testRecursion()
 {
 	double* pArr = new double[4];
 	pArr[0] = 1.2; pArr[1] = 5.6;
@@ -22,6 +22,11 @@ int main()
 	cout << "There are " << countGreaterThanTarget << " values!" << endl;
 
 	delete[] pArr;
+}
+
+int main()
+{
+	testRecursion();
 
 	bool fakeBug = true;
 
