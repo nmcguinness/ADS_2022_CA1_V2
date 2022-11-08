@@ -6,6 +6,8 @@
 
 int main()
 {
+	bool fakeBug = true;
+
 	int z = 100;
 
 #ifdef SHOW_DEBUG_MSGS
