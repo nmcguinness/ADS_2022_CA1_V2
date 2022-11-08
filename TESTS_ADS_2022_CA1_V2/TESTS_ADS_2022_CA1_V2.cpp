@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../ADS_2022_CA1_V2/Functions.h"
+#include "../ADS_2022_CA1_V2/Laptop.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -30,7 +31,7 @@ namespace TESTSADS2022CA1V2
 
 			for (int i = 0; i < lengthC; i++)
 			{
-				Assert::AreEqual(target[i], dataArrC[i]);
+				//		Assert::AreEqual(target[i], dataArrC[i]);
 			}
 		}
 
@@ -55,15 +56,22 @@ namespace TESTSADS2022CA1V2
 		TEST_METHOD(testLaptopInitalized)
 		{
 			//instanciate a new laptop object and test that the object is set correctly
+			Laptop laptop1("acer", 1299, 1024, 3.2);
 
-			// your code goes here
+			//where in RAM is laptop (address) and storing in ptr
+			Laptop* ptrLaptop = &laptop1;
+
+			Assert::IsNotNull(ptrLaptop);
 		}
 
 		TEST_METHOD(testLaptopLessThan)
 		{
-			//instanciate two different and distinct Television objects and <= operator to test that one object is less than the other
+			Laptop laptop1("acer", 1299, 1024, 3.2);
+			Laptop laptop2("acer", 1299, 1024, 3.2);
 
-			//your code goes here...
+			bool isLessThan = laptop1 <= laptop2;
+
+			Assert::AreEqual(isLessThan, true);
 		}
 	};
 }

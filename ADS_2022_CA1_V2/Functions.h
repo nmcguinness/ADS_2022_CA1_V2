@@ -21,3 +21,20 @@ void interleaveArrays(int* pA1, int
 		}
 	}
 }
+
+//given the array [1.2, 5.6, 8.5, 9.8] and the value ‘5.0’ the function should return 3.
+void countGreaterThan(double* pArr,
+	int length, double target, int currentIndex, int& countGreaterThanTarget)
+{
+	if (currentIndex == length)		//step 1 - when do I finish?
+		return;
+	else							//step 2 - when do I keep going/call myself?
+	{
+		if (pArr[currentIndex] > target)
+			countGreaterThanTarget++;
+
+		currentIndex++;
+		countGreaterThan(pArr, length, target,
+			currentIndex, countGreaterThanTarget);
+	}
+}

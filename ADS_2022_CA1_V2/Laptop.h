@@ -16,12 +16,6 @@ public:
 	{
 	}
 
-	bool operator<=(Laptop other)
-	{
-		return this->hdSize <= other.getHDSize()
-			&& this->price <= other.getPrice();
-	}
-
 	double getHDSize() const { return this->hdSize; };
 	double getPrice() const { return this->price; };
 
@@ -29,6 +23,12 @@ public:
 		out << laptop.make << ", " << laptop.price;
 		return out;
 	}
+
+	//bool operator<=(Laptop other)
+	//{
+	//	return this->hdSize <= other.getHDSize()
+	//		&& this->price <= other.getPrice();
+	//}
 
 	bool operator<=(const Laptop& rhs)
 	{
